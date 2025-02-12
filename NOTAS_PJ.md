@@ -78,3 +78,20 @@ Por exemplo, se sua chave de API for 1234567890ABCDEF, o URL para enviar dados p
 ```
 http://api.thingspeak.com/update?api_key=1234567890ABCDEF&field1=1000&field2=500&field3=300
 ```
+
+### Este URL envia:
+
+- campo1 = 1000 (potência em watts).
+
+- campo2 = 500 (HC em kWh).
+
+- campo3 = 300 (HP em kWh).
+
+**Notas*
+Tratamento de erros: adicione um tratamento de erros mais robusto para solicitações de Wi-Fi e HTTP, se necessário.
+
+Implementação Linky: Implemente a lógica real para ler dados do dispositivo Linky.
+
+Segurança: evite codificar informações confidenciais, como chaves de API, no código. Considere usar armazenamento seguro ou variáveis ​​de ambiente.
+
+
