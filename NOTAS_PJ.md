@@ -10,12 +10,12 @@
 
 - **Sleep**: A função sleep_ms é usada para esperar 1 segundo entre as iterações do loop.
 
-### Notes:
+### Notas:
 
-Linky Implementation: The actual implementation of reading data from the Linky device is not provided. You need to implement this based on the specific protocol used by the Linky device.
+- **Implementação Linky**: A implementação real de leitura de dados do dispositivo Linky não é fornecida. Você precisa implementar isso com base no protocolo específico usado pelo dispositivo Linky.
 
-Error Handling: The code includes basic error handling, but you may want to add more robust error handling depending on your application's needs.
+- **Tratamento de erros**: o código inclui tratamento de erros básico, mas você pode querer adicionar um tratamento de erros mais robusto, dependendo das necessidades do seu aplicativo.
 
-Wi-Fi Credentials: Replace "votre_réseau" and "votre_clé" with your actual Wi-Fi SSID and password.
+- **Credenciais Wi-Fi**: Substitua "votre_réseau" e "votre_clé" pelo seu SSID e senha Wi-Fi reais.
 
-API Key: Replace "votre_cle" with your actual API key for Emoncms.
+- **Chave de API**: Substitua "votre_cle" pela sua chave de API real para Emoncms.
