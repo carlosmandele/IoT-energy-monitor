@@ -6,18 +6,22 @@
 #include "hardware/gpio.h"
 #include "lwip/apps/http_client.h"
 
-// Define o pino GPIO para o Linky
-#define LINKY_PIN 13
 
-// Configurações do ThingSpeak
-#define THINGSPEAK_API_KEY "ABC123XYZ456" // Substitua pela sua API Key do ThingSpeak
-#define THINGSPEAK_CHANNEL_ID "123456"      // Substitua pelo ID do seu canal no ThingSpeak
-#define THINGSPEAK_URL "http://api.thingspeak.com/update"
 
 // Configurações Wi-Fi
 #define WIFI_SSID "NOME_DA_SUA_REDE"       // 
 #define WIFI_PASSWORD "SENHA_DA_SUA_REDE"  // 
 #define WIFI_COUNTRY CYW43_COUNTRY_BRAZIL  // Altere conforme necessário
+
+
+// Configurações do ThingSpeak
+const int THINGSPEAK_CHANNEL_ID "123456"      // Substitua pelo ID do seu canal no ThingSpeak
+const char THINGSPEAK_API_KEY "ABC123XYZ456" // Substitua pela sua API Key do ThingSpeak
+const char THINGSPEAK_URL "http://api.thingspeak.com/update"
+
+
+// Define o pino GPIO para o Sensor
+const int SENSOR_PIN 13
 
 
 // Função para conectar ao Wi-Fi
@@ -35,10 +39,10 @@ bool connect_to_wifi() {
     return true;
 }
 
-// Função para ler dados do Linky (implementação simulada)
-int read_linky_data(const char *data_type) {
-    // Esta é uma função de exemplo. Implemente a lógica real para ler dados do Linky.
-    // ou seja, a implementação real deve incluir comunicação serial com o Linky
+// Função para ler dados do Sensor (implementação simulada)
+int read_sensor_data(const char *data_type) {
+    // Esta é uma função de exemplo. Implemente a lógica real para ler dados do Sensor.
+    // ou seja, a implementação real deve incluir comunicação serial com o Sensor
     static int counter = 0;
     counter++;
 
@@ -91,10 +95,10 @@ int main() {
 
     // Loop principal
     while (true) {
-        // Lê dados do Linky
-        int power = read_linky_data("PAPP");
-        int hc = read_linky_data("HCHC");
-        int hp = read_linky_data("HPHC");
+        // Lê dados do Sensor
+        int power = read_sensor_data("PAPP");
+        int hc = read_sensor_data("HCHC");
+        int hp = read_sensor_data("HPHC");
 
         // Exibe os dados no console
         printf("\n--- Leitura dos Dados ---\n");
