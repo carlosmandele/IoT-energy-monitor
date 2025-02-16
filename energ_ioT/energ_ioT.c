@@ -26,9 +26,13 @@ const char* server = "http://api.thingspeak.com/update"
 
 
 // =========================================================
-// Definições do pino GPIO para o Sensor
+// Definições do UART e GPIO para o Sensor
 // ==========================================================
-const int SENSOR_PIN = 13;
+#define UART_ID uart0
+#define BAUD_RATE 9600
+#define UART_TX_PIN 12
+#define UART_RX_PIN 13 // Pinagem do sensor
+
 
 /// ==========================================================
 // Siglas exigidas pelo protocolo do medidor
@@ -70,20 +74,34 @@ bool connect_to_wifi() {
 // Função para ler dados do Sensor (implementação simulada)
 // =====================================================================
 int read_sensor_data(const char *data_type) {
-    // Esta é uma função de exemplo. Implemente a lógica real para ler dados do Sensor.
-    // ou seja, a implementação real deve incluir comunicação serial com o Sensor
-    static int counter = 0;
-    counter++;
+    // Envia o comando para o Sensor.
+    uart_puts(UART_ID, data_type);
+    // Terminador de comando (ajustado conforme o protocolo)
+    uart_puts(UATR_ID, "\r");
 
-    if (strcmp(data_type, SIGLA_POTENCIA) == 0) {
-        return 1000 + (counter % 100);   // Potência em watts
-    } else if (strcmp(data_type, SIGLA_HC) == 0) {
-        return 500 + (counter % 50);       // Consumo HC em kWh
-    } else if (strcmp(data_type, SIGLA_HP) == 0) {
-        return 300 + (counter % 30);       // Consumo HP em kWh
+    char buffer[32] = {0};
+    int index = 0;
+    // Timeout de 200ms
+    uint64_t timeout = time_us_64() + 200000;
+
+    while (time_us_64() < timeout) {
+        if (uart_is_readable(UAART_ID)) {
+            char c = uart_getc(UART_ID);
+            if (c == '\r' || c == '\n') {
+                if (index > 0) {
+                    buffer[index] = '\0';
+                    return atoi(buffer); // Converte resposta para inteiro
+                }
+            } else if (index < sizeof(buffer) - 1) {
+                buffer[index++] = c;
+            }
+        }
     }
-    return 0;
-}
+    
+    printf("Erro ao ler dados para %s\n", data_type);
+    return 0; // Retorna 0 em caso de falha
+}    
+
 
 // ==================================================================
 // Função para enviar dados ao servidor (ThingSpeak)
@@ -107,8 +125,14 @@ int main() {
     stdio_init_all();
     sleep_ms(2000);
 
-    // Configuração do país para compliance RF (importante!)
-    // cyw43_arch_init_with_country(CYW43_COUNTRY_BRAZIL); // Altere conforme seu país
+    // ==============================================================
+    // Configuração do UART para o sensor
+    // ===============================================================
+    uart_init(UART_ID, BAUD_RATE);
+    gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
+    gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
+    gpio_set_function(UART_ID, 8, 1, UART_PARITY_NONE);
+
 
     // Inicializa o chip Wi-Fi com configuração de país
     if (cyw43_arch_init_with_country(WIFI_COUNTRY)) {
@@ -122,7 +146,9 @@ int main() {
         return 1;
     }
 
+    // ==============================================================
     // Loop principal
+    // ===============================================================
     while (true) {
         // Lê dados do Sensor
         int potencia_ativa = read_sensor_data(SIGLA_POTENCIA);
