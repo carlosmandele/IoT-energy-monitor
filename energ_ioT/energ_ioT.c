@@ -1,5 +1,5 @@
 /* ======================================================
- * Sistema de Monitoramento de Energia IoT para Raspberry Pi Pico W
+ * Sistema de Monitoramento de consumo de Energia IoT para Raspberry Pi Pico W
  * Integração com ThingSpeak via Wi-Fi
  * Autor: Carlos Mandele K.
  * ====================================================== */
