@@ -14,7 +14,7 @@
 
 #define UART_RX_PIN 13
 
-// Variáveis globais
+// Variáveis globais para armazenamento dos dados
 int ap = 0;        // Potência Ativa (kW)
 int hchc = 0;      // Consumo Fora de Pico (kWh)
 int hphc = 0;      // Consumo Horário de Pico (kWh)
@@ -55,7 +55,7 @@ int main() {
     printf("Iniciando sistema...\n");
     printf("Modo: Simulação Integrada (sem hardware)\n\n");
 
-    // Configuração da UART (mantida para compatibilidade futura)
+    // Configuração da UART
     uart_init(UART_ID, BAUD_RATE);
     gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
     uart_set_hw_flow(UART_ID, false, false);
@@ -105,7 +105,7 @@ int main() {
             last_print = now;
         }
         
-        sleep_ms(100);
+        sleep_ms(100); // Evita sobrecarga do processador (Reduz consumo de CPU)
     }
     return 0;
 }
