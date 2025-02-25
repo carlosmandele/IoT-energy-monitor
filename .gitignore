@@ -50,3 +50,25 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Arquivo .gitignore para projetos Raspberry Pi Pico
+
+# Credenciais
+/config.h          # Arquivo de configuração com chaves
+/secrets/          # Pasta com dados sensíveis
+*.env              # Arquivos de ambiente
+*.key              # Chaves privadas
+
+# Build
+/build/            # Pasta de compilação
+*.uf2              # Binários do Pico
+*.elf              # Arquivos de debug
+*.bin              # Outros binários
+
+# Editor/IDE
+.vscode/           # Configurações do VS Code
+.idea/             # Configurações do JetBrains IDE
+
+# Sistema
+.DS_Store          # Arquivos do macOS
+Thumbs.db          # Arquivos do Windows
