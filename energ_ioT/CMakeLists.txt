@@ -46,12 +46,7 @@ pico_enable_stdio_usb(energ_ioT 1)
 
 # Add the standard library to the build
 target_link_libraries(energ_ioT
-        pico_stdlib
-        pico_cyw43_arch_lwip
-        lwip
-        hardware_uart
-        hardware_gpio
-)
+        pico_stdlib hardware_uart)
 
 # Add the standard include files to the build
 target_include_directories(energ_ioT PRIVATE
