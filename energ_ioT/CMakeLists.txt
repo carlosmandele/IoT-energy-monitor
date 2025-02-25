@@ -33,6 +33,16 @@ project(energ_ioT C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
+# Alvo 2: Modo simulação
+add_executable(simulation automatic_simulation.c)
+target_link_libraries(simulation pico_stdlib hardware_uart)
+pico_add_extra_outputs(simulation)
+
+# Alvo 3: Modo terminal
+add_executable(terminal terminal_simulation.c)
+target_link_libraries(terminal pico_stdlib)
+pico_add_extra_outputs(terminal)
+
 # Add executable. Default name is the project name, version 0.1
 
 add_executable(energ_ioT energ_ioT.c )
@@ -46,11 +56,13 @@ pico_enable_stdio_usb(energ_ioT 1)
 
 # Add the standard library to the build
 target_link_libraries(energ_ioT
-        pico_stdlib hardware_uart)
+        pico_stdlib hardware_uart pico_cyw43_arch pico_lwip lwip)
 
 # Add the standard include files to the build
 target_include_directories(energ_ioT PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
+        ${PICO_SDK_PATH}/lib/cyw43-driver/src
+        ${PICO_SDK_PATH}/lib/lwip/src/include
 )
 
 # Add any user requested libraries
