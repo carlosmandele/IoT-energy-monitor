@@ -7,13 +7,13 @@
 *.key              # Chaves privadas
 
 # Build
-/build/            # Pasta de compilação
+/build         # Pasta de compilação
 *.uf2              # Binários do Pico
 *.elf              # Arquivos de debug
 *.bin              # Outros binários
 
 # Editor/IDE
-.vscode/           # Configurações do VS Code
+/.vscode           # Configurações do VS Code
 .idea/             # Configurações do JetBrains IDE
 
 # Sistema

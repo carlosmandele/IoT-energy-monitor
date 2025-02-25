@@ -1,3 +1,5 @@
+C:/Users/mande/Documents/INSTITUTO-HARDWARE-BR/energIoT/energ_ioT/build/CMakeFiles/simulation.dir
+C:/Users/mande/Documents/INSTITUTO-HARDWARE-BR/energIoT/energ_ioT/build/CMakeFiles/terminal.dir
 C:/Users/mande/Documents/INSTITUTO-HARDWARE-BR/energIoT/energ_ioT/build/CMakeFiles/energ_ioT.dir
 C:/Users/mande/Documents/INSTITUTO-HARDWARE-BR/energIoT/energ_ioT/build/CMakeFiles/edit_cache.dir
 C:/Users/mande/Documents/INSTITUTO-HARDWARE-BR/energIoT/energ_ioT/build/CMakeFiles/rebuild_cache.dir
