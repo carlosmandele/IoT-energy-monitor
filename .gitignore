@@ -60,15 +60,21 @@ dkms.conf
 *.key              # Chaves privadas
 
 # Build
-**/build/           # Pasta de compilação
+build
+build-*
+build_*          # Pasta de compilação
 *.uf2              # Binários do Pico
 *.elf              # Arquivos de debug
 *.bin              # Outros binários
 
 # Editor/IDE
-.vscode/         # Configurações do VS Code
-.idea/             # Configurações do JetBrains IDE
+.vscode         # Configurações do VS Code
+.idea             # Configurações do JetBrains IDE
 
 # Sistema
 .DS_Store          # Arquivos do macOS
 Thumbs.db          # Arquivos do Windows
+
+# outros
+cmake-*
+_dps
