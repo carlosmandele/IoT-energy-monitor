@@ -126,7 +126,22 @@ screen /dev/ttyACM0 115200
 [UART] Dado recebido: PAPP:1500
 [Dados] Enviados para ThingSpeak!
 ```
+
+3. **Plataforma IoT Nuvem (ThingSpeak)**:
    
+   i. Crie um canal com 3 campos:
+   
+   - Field 1: Potência Ativa (W)
+
+   - Field 2: Consumo Fora de Pico (Wh)
+
+   - Field 3: Consumo Horário Pico (Wh)
+
+   ii. Acesse:
+   ```
+   https://thingspeak.com/channels/[CHANNEL_ID]
+   ```
+
 ---
 
 ## 🛠️ Fluxo de Desenvolvimento
