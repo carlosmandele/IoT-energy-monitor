@@ -30,6 +30,8 @@ Sistema de monitoramento de consumo energético em tempo real com integração I
 - [Instalação](#-instalação)
 - [Configuração](#-configuração)
 - [Uso](#-uso)
+- [Fluxo de Desenvolvimento](#-fluxo-de-desenvolvimento)
+- [Arquitetura do Sistema](#-arquitetura-do-sistema)
 - [Solução de Problemas](#-solução-de-problemas)
 - [Licença](#-licença)
 
@@ -160,7 +162,7 @@ screen /dev/ttyACM0 115200
 ---
 
 ## 🌐 Arquitetura do Sistema
-```mermaid
+```
 graph TD
     A[Sensor de Energia] -->|UART| B(Pico W)
     B -->|Processamento| C{Dados}
