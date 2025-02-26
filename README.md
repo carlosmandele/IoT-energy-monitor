@@ -160,6 +160,16 @@ screen /dev/ttyACM0 115200
    - Flash via USB-C com arquivo `.uf2`
   
 ---
+## Solução de problemas
+
+### Problemas Comuns
+| Sintoma               | Possíveis Causas | Solução                              |
+|--------------------------|---------------|-----------------------------------|
+| Wi-Fi não conecta                 | SSID/Senha incorretos         | Verifique caracteres especiais |
+| Dados não aparecem        | API Key inválida        | Revise permissões do canal |
+| Erros UART    | Baud rate incompatível           | Confira especificação do sensor |
+| Timeout DNS    | Sem conexão com internet           | Teste ping para `api.thingspeak.com` |
+
 
 ## 🌐 Arquitetura do Sistema
 ```
