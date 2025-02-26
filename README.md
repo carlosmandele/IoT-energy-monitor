@@ -80,8 +80,8 @@ lwip
 
 ```
 # Clone o repositório
-git clone https://github.com/carlosmandele/energy-monitor-pico.git
-cd energy-monitor-pico
+git clone https://github.com/carlosmandele/energ_ioT.git
+cd energ_ioT
 
 # Configure as variáveis de ambiente
 export PICO_SDK_PATH=~/pico/pico-sdk
@@ -124,7 +124,7 @@ screen /dev/ttyACM0 115200
 
 ```
 [Wi-Fi] Conectado com sucesso!
-[Wi-Fi] IP: 192.168.1.100
+[Wi-Fi] IP: 192.168.1.10
 [UART] Dado recebido: PAPP:1500
 [Dados] Enviados para ThingSpeak!
 ```
