@@ -94,8 +94,39 @@ make -j4
 ```
 3. **Flash no Pico**:
    - Mantenha pressionado o botão `BOOTSEL` ao conectar o USB
-   - Copie o arquivo .uf2 para a unidade montada
+   - Copie o arquivo `.uf2` para a unidade montada
 
+## Configuração
+- **Arquivo `main.c`**:
+
+```
+// Configure suas credenciais:
+#define WIFI_SSID "NOME_DA_REDE"
+#define WIFI_PASSWORD "SENHA_DA_REDE"
+#define THINGSPEAK_API_KEY "XXXXXXXXXXXXXXXX"
+```
+
+# Uso
+
+1. **Monitoramento Serial**:
+
+```
+# Linux
+screen /dev/ttyACM0 115200
+
+# Windows
+# Use Putty ou Terminal Serial USB
+```
+
+2. **Saída Esperada**:
+
+```
+[Wi-Fi] Conectado com sucesso!
+[Wi-Fi] IP: 192.168.1.100
+[UART] Dado recebido: PAPP:1500
+[Dados] Enviados para ThingSpeak!
+```
+   
 ---
 
 ## 🛠️ Fluxo de Desenvolvimento
