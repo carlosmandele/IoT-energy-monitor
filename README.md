@@ -2,8 +2,6 @@
 
 ![Tech Stack](https://img.shields.io/badge/tech_stack-C%20|%20Pico%20W%20|%20ThingSpeak%20|%20UART%20|%20lwIP-00979D?style=flat)
 
-![Pico W](https://www.raspberrypi.com/app/uploads/2022/06/COBS-1.0-1.png)
-
 Sistema de monitoramento de consumo energético em tempo real com integração IoT via nuvem. Desenvolvido para Raspberry Pi Pico W.
 
 ## 🔧 Tech Stack
