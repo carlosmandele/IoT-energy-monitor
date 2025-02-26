@@ -61,7 +61,10 @@ Sistema de monitoramento de consumo energético em tempo real com integração I
 | Python (para scripts)    | 3.9           | [Python.org](https://www.python.org/) |
 
 ## 📦 Dependências
-```c
+
+```
+// Linguagem
+C
 // Bibliotecas principais
 pico_stdlib
 hardware_uart
@@ -69,6 +72,29 @@ pico_cyw43_arch
 pico_lwip
 lwip
 ```
+
+## Instalação
+1. **Configurar Ambiente**:
+
+```
+# Clone o repositório
+git clone https://github.com/carlosmandele/energy-monitor-pico.git
+cd energy-monitor-pico
+
+# Configure as variáveis de ambiente
+export PICO_SDK_PATH=~/pico/pico-sdk
+```
+2. **Compilar projeto**:
+
+```
+mkdir build
+cd build
+cmake -DPICO_BOARD=pico_w ..
+make -j4
+```
+3. **Flash no Pico**:
+   - Mantenha pressionado o botão `BOOTSEL` ao conectar o USB
+   - Copie o arquivo .uf2 para a unidade montada
 
 ---
 
