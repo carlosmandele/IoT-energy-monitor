@@ -162,7 +162,7 @@ screen /dev/ttyACM0 115200
 ---
 ## Solução de problemas
 
-### Problemas Comuns
+### **Problemas Comuns**:
 | Sintoma               | Possíveis Causas | Solução                              |
 |--------------------------|---------------|-----------------------------------|
 | Wi-Fi não conecta                 | SSID/Senha incorretos         | Verifique caracteres especiais |
@@ -170,6 +170,12 @@ screen /dev/ttyACM0 115200
 | Erros UART    | Baud rate incompatível           | Confira especificação do sensor |
 | Timeout DNS    | Sem conexão com internet           | Teste ping para `api.thingspeak.com` |
 
+### **Logs de Depuração**:
+
+```
+# Habilite debug do Wi-Fi
+printf("Status Wi-Fi: %d\n", cyw43_arch_wifi_connect_status());
+```
 
 ## 🌐 Arquitetura do Sistema
 ```
@@ -179,3 +185,7 @@ graph TD
     C -->|Armazenamento| D[Variáveis Locais]
     C -->|Envio| E[ThingSpeak via Wi-Fi]
     E -->|Visualização| F[Dashboard Web]
+
+## Licença
+License - Veja o arquivo LICENSE para detalhes.
+Suporte:
