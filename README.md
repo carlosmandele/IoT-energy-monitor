@@ -4,27 +4,9 @@
 
 Sistema de monitoramento de consumo energético em tempo real com integração IoT via nuvem. Desenvolvido para Raspberry Pi Pico W.
 
-## 🔧 Tech Stack
-### Principais Tecnologias
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%20Pico%20W-C51A4A?style=for-the-badge&logo=Raspberry-Pi&logoColor=white)
-![ThingSpeak](https://img.shields.io/badge/ThingSpeak-00979D?style=for-the-badge&logo=thingspeak&logoColor=white)
-![UART](https://img.shields.io/badge/Protocolo-UART-007ACC?style=for-the-badge)
-
-### Ferramentas de Desenvolvimento
-![VS Code](https://img.shields.io/badge/Editor-VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code)
-![CMake](https://img.shields.io/badge/Build-CMake-064F8C?style=for-the-badge&logo=cmake)
-![Git](https://img.shields.io/badge/Versionamento-Git-F05032?style=for-the-badge&logo=git)
-
-### Bibliotecas Chave
-![Pico SDK](https://img.shields.io/badge/SDK-Raspberry%20Pi%20Pico-FF3366?style=for-the-badge)
-![lwIP](https://img.shields.io/badge/Network-lwIP-3A75BD?style=for-the-badge)
-![CYW43](https://img.shields.io/badge/WiFi-CYW43%20Driver-00A98F?style=for-the-badge)
-
-
-
 ## 📋 Índice
 - [Funcionalidades](#-funcionalidades)
+- [Tech Stack](#-tech-stack)
 - [Pré-requisitos](#-pré-requisitos)
 - [Dependências](#-dependências)
 - [Instalação](#-instalação)
@@ -45,8 +27,24 @@ Sistema de monitoramento de consumo energético em tempo real com integração I
   - Consumo Horário (Wh)
   - Consumo Fora de Pico (Wh)
 
-## 🛠 Pré-requisitos
+## 🔧 Tech Stack
+### Principais Tecnologias
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%20Pico%20W-C51A4A?style=for-the-badge&logo=Raspberry-Pi&logoColor=white)
+![ThingSpeak](https://img.shields.io/badge/ThingSpeak-00979D?style=for-the-badge&logo=thingspeak&logoColor=white)
+![UART](https://img.shields.io/badge/Protocolo-UART-007ACC?style=for-the-badge)
 
+### Ferramentas de Desenvolvimento
+![VS Code](https://img.shields.io/badge/Editor-VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code)
+![CMake](https://img.shields.io/badge/Build-CMake-064F8C?style=for-the-badge&logo=cmake)
+![Git](https://img.shields.io/badge/Versionamento-Git-F05032?style=for-the-badge&logo=git)
+
+### Bibliotecas Chave
+![Pico SDK](https://img.shields.io/badge/SDK-Raspberry%20Pi%20Pico-FF3366?style=for-the-badge)
+![lwIP](https://img.shields.io/badge/Network-lwIP-3A75BD?style=for-the-badge)
+![CYW43](https://img.shields.io/badge/WiFi-CYW43%20Driver-00A98F?style=for-the-badge)
+
+## 🛠 Pré-requisitos
 ### Hardware
 | Componente               | Especificações                          |
 |--------------------------|-----------------------------------------|
@@ -63,17 +61,21 @@ Sistema de monitoramento de consumo energético em tempo real com integração I
 | Python (para scripts)    | 3.9           | [Python.org](https://www.python.org/) |
 
 ## 📦 Dependências
-
 ```
 // Linguagem
-C
+c
 // Bibliotecas principais
 pico_stdlib
 hardware_uart
 pico_cyw43_arch
 pico_lwip
 lwip
-```
+````
+
+
+
+
+
 
 ## Instalação
 1. **Configurar Ambiente**:
