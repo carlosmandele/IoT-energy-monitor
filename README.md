@@ -125,9 +125,11 @@ screen /dev/ttyACM0 115200  # Linux
 ```
 2. Saída esperada:
 ```
-[Wi-Fi] Conectado a 'SUA_REDE_WIFI'
-[UART] Dado recebido: HCHC:2500
-[Dados] Enviados para ThingSpeak (HTTP 200)
+# Linux
+screen /dev/ttyACM0 115200
+
+# Windows
+# Use Putty ou Terminal Serial do Arduino IDE
 ```
 3. Visualização na Nuvem:
 
