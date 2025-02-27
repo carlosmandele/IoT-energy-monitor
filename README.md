@@ -168,6 +168,7 @@ with serial.Serial('/dev/ttyACM0', 9600) as ser:
 ---
 
 ## 🌐 Arquitetura do Sistema
+
 ```mermaid
 graph TD
     A[Sensor de Energia] -->|UART| B(Pico W)
@@ -176,65 +177,3 @@ graph TD
     C -->|Envio| E[ThingSpeak via Wi-Fi]
     E -->|Visualização| F[Dashboard Web]
     ```
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Solução de problemas
-
-- Problemas comuns
-
-| Sitomas               | Causa | Solução                              |
-|--------------------------|---------------|-----------------------------------|
-| Wi-Fi não conecta                 | SSID/Senha incorretos         | Verifique espaços/caracteres |
-| Dados não atualizam	        | API Key inválida        | Revise permissões do canal |
-| Erros de comunicação    | Baud rate incorreto           | Confira documentação do sensor |
-| Timeout DNS	    | Sem internet           | Teste ping api.thingspeak.com |
-
-- Depuração Avançada
-```
-// Adicione no código para debug:
-printf("IP: %s\n", ip4addr_ntoa(netif_ip4_addr(netif_list)));
-printf("Status Wi-Fi: %d\n", cyw43_arch_wifi_connect_status());
-
-// Ou
-
-printf("Status Wi-Fi: %d\n", cyw43_arch_wifi_connect_status());
-printf("Último erro: %s\n", cyw43_get_error_string());
-```
-
----
-
-## Licença
-Nome da licença - Consulte o arquivo LICENSE para detalhes.
-
-Desenvolvido por Carlos Mandele
-📧 Contato: 
-🐙 Repositório: github.com/carlosmandele
-
