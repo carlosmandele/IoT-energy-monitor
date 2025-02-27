@@ -178,6 +178,34 @@ graph TD
     ```
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Solução de problemas
 
 - Problemas comuns
