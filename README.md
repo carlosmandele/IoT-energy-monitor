@@ -173,7 +173,7 @@ graph TD
     A[Sensor de Energia] -->|UART| B(Pico W)
     B -->|Processamento| C{Dados}
     C -->|Armazenamento| D[Variáveis Locais]
-    C -->|Envio| E[Server (ThingSpeak) via Wi-Fi]
+    C -->|Envio| E[ThingSpeak via Wi-Fi]
     E -->|Visualização| F[Dashboard Web]
     ```
 ---
@@ -187,7 +187,7 @@ graph TD
 | Wi-Fi não conecta                 | SSID/Senha incorretos         | Verifique espaços/caracteres |
 | Dados não atualizam	        | API Key inválida        | Revise permissões do canal |
 | Erros de comunicação    | Baud rate incorreto           | Confira documentação do sensor |
-| Timeout DNS	    | Sem internet           | Teste ping `api.thingspeak.com` |
+| Timeout DNS	    | Sem internet           | Teste ping api.thingspeak.com |
 
 - Depuração Avançada
 ```
