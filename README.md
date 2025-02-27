@@ -168,7 +168,6 @@ with serial.Serial('/dev/ttyACM0', 9600) as ser:
 ---
 
 ## 🌐 Arquitetura do Sistema
-
 ```mermaid
 graph TD
     A[Sensor de Energia] -->|UART| B(Pico W)
