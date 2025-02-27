@@ -152,8 +152,9 @@ screen /dev/ttyACM0 115200  # Linux
 2. **Testes**:  
    - Monitor serial integrado (`screen`/`minicom`)  
    - Simulação de dados via Python
+
    ```
-   import serial, time
+import serial, time
 with serial.Serial('/dev/ttyACM0', 9600) as ser:
     while True:
         ser.write(b"HPHC:3000\r\n")
