@@ -14,8 +14,8 @@ Sistema de monitoramento de consumo energético em tempo real com integração I
 - [Configuração](#-configuração)
 - [Uso](#-uso)
 - [Fluxo de Desenvolvimento](#-fluxo-de-desenvolvimento)
-- [Arquitetura do Sistema](#-arquitetura-do-sistema)
 - [Solução de Problemas](#-solução-de-problemas)
+- [Arquitetura do Sistema](#-arquitetura-do-sistema)
 - [Licença](#-licença)
 
 
