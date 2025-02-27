@@ -156,9 +156,10 @@ screen /dev/ttyACM0 115200  # Linux
    ```
    import serial, time
    with serial.Serial('/dev/ttyACM0', 9600) as ser:
-    while True:
+       while True:
         ser.write(b"HPHC:3000\r\n")
-        time.sleep(5)```
+        time.sleep(5)
+        ```
 
 3. **Deploy**:  
    - Compilação via CMake  
