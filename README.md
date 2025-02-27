@@ -63,7 +63,7 @@ Sistema de monitoramento de consumo energético em tempo real com integração I
 |--------------------------|---------------|-----------------------------------|
 | Pico SDK                 | 1.5.0         | [GitHub](https://github.com/raspberrypi/pico-sdk) |
 | Toolchain ARM GCC        | 10.3.1        | [Arm Developer](https://developer.arm.com/) |
-| Python (para scripts)    | 3.9           | [Python.org](https://www.python.org/) |
+| Python (para scripts de build)    | 3.9           | [Python.org](https://www.python.org/) |
 
 ## 📦 Dependências
 
