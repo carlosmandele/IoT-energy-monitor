@@ -153,7 +153,7 @@ screen /dev/ttyACM0 115200  # Linux
    - Monitor serial integrado (`screen`/`minicom`)  
    - Simulação de dados via Python
 
-   ```
+```
    import serial, time
 with serial.Serial('/dev/ttyACM0', 9600) as ser:
     while True:
