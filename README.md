@@ -163,6 +163,33 @@ screen /dev/ttyACM0 115200  # Linux
 3. **Deploy**:  
    - Compilação via CMake  
    - Flash via USB-C com arquivo `.uf2`
+
+---
+
+## Solução de problemas
+
+- Problemas comuns
+
+| Sitomas               | Causa | Solução                              |
+|--------------------------|---------------|-----------------------------------|
+| Wi-Fi não conecta                 | SSID/Senha incorretos         | Verifique espaços/caracteres |
+| Dados não atualizam	        | API Key inválida        | Revise permissões do canal |
+| Erros de comunicação    | Baud rate incorreto           | Confira documentação do sensor |
+| Timeout DNS	    | Sem internet           | Teste ping api.thingspeak.com |
+
+
+- Depuração Avançada
+```
+// Adicione no código para debug:
+printf("IP: %s\n", ip4addr_ntoa(netif_ip4_addr(netif_list)));
+printf("Status Wi-Fi: %d\n", cyw43_arch_wifi_connect_status());
+```
+
+
+
+
+
+
   
 ---
 
