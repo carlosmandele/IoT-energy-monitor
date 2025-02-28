@@ -193,7 +193,7 @@ void process_line(char *line) {
 }
 ```
 
-- **Funcionamento**: Você envia comandos manualmente via USB, simulando um sensor real.
+- **Funcionamento**: Envia comandos manualmente via USB, simulando um sensor real.
 - **Quando usar**: Para testar o parser de dados ou comunicação serial.
 
 
