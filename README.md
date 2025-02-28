@@ -121,15 +121,17 @@ Operação basica:
 
 1. Monitor Serial:
 ```
-screen /dev/ttyACM0 115200  # Linux
+// Linux
+screen /dev/ttyACM0 115200
+
+// Windows
+// Use Putty ou Terminal Serial do Arduino IDE
 ```
 2. Saída esperada:
 ```
-# Linux
-screen /dev/ttyACM0 115200
-
-# Windows
-# Use Putty ou Terminal Serial do Arduino IDE
+[Wi-Fi] Conectado a 'SUA_REDE_WIFI'
+[UART] Dado recebido: HCHC:2500
+[Dados] Enviados para ThingSpeak (HTTP 200)
 ```
 3. Visualização na Nuvem:
 
