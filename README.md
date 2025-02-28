@@ -147,6 +147,7 @@ screen /dev/ttyACM0 115200
 
 ---
 
+
 ## 🛠️ Fluxo de Desenvolvimento
 
 1. **Codificação**:  
@@ -165,13 +166,13 @@ i. **Método de teste com Hardware**:
         ser.write(b"HPHC:3000\r\n")
         time.sleep(5)
         ```
-        
+
 ii. **Métodos de teste sem Hardware**:
-No contexto deste projeto, é validar o funcionamento do programa `sem depender de dispositivos físicos externos` (como medidores de energia ou sensores conectados). É uma forma de simular o ambiente real através de software, útil para: **1) simulação de dados** - o próprio código gera valores fictícios (ex: potência ativa aleatória). Útil para testar a lógica do programa, gráficos, ou interfaces. **2) Entrada Manual via Terminal** - Você digita comandos no terminal serial (ex: `PAPP:1500`) como se fossem dados reais. Permite verificar o processamento de dados sem hardware externo.**3) Emulação de Hardware** - Ferramentas como QEMU ou Wokwi emulam microcontroladores (mais complexo para o Pico).
+No contexto deste projeto, é validar o funcionamento do programa `sem depender de dispositivos físicos externos` (como medidores de energia ou sensores conectados). É uma forma de simular o ambiente real através de software, útil para: **A) simulação de dados** - o próprio código gera valores fictícios (ex: potência ativa aleatória). Útil para testar a lógica do programa, gráficos, ou interfaces. **B) Entrada Manual via Terminal** - Você digita comandos no terminal serial (ex: `PAPP:1500`) como se fossem dados reais. Permite verificar o processamento de dados sem hardware externo.**C) Emulação de Hardware** - Ferramentas como QEMU ou Wokwi emulam microcontroladores (mais complexo para o Pico).
 
 Neste projeto, há duas abordagens para testes sem hardware:
-1. [Modo de Simulação Automática](energ_ioT/automatic_simulation.c):
 
+A. [Modo de Simulação Automática](energ_ioT/automatic_simulation.c):
 ```
 void simular_dados() {
     ap = 1500 + (rand() % 1000);  // Gera valores entre 1500 e 2500 W
@@ -180,10 +181,9 @@ void simular_dados() {
 ```
 
 - **Funcionamento**: O programa gera dados fictícios automaticamente se nenhum hardware estiver conectado.
-- **Quando usar**: Para validar a exibição de dados ou 
+- **Quando usar**: Para validar a exibição de dados ou interfaces.
 
-2. [Teste via Terminal Serial](energ_ioT/terminal_simulation.c):
-
+B. [Teste via Terminal Serial](energ_ioT/terminal_simulation.c):
 ```
 // Você digita "PAPP:2000" no terminal
 void process_line(char *line) {
@@ -192,14 +192,9 @@ void process_line(char *line) {
 }
 ```
 
-- **Funcionamento**: Você envia comandos manualmente via USB, simulando um sensor real.
+- Funcionamento: Você envia comandos manualmente via USB, simulando um sensor real.
 
-- **Quando usar**: Para testar o parser de dados ou comunicação serial.
-
-
- * O próprio código gera valores fictícios (ex: potência ativa aleatória).
- * Útil para testar a lógica do programa, gráficos, ou interfaces.
-
+- **Quando usar: Para testar o parser de dados ou comunicação serial.
 
 
 
