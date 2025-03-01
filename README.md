@@ -30,7 +30,6 @@ Este projeto usa **duas licenças diferentes**, dependendo do tipo de conteúdo:
 - [Fluxo de Desenvolvimento](#-fluxo-de-desenvolvimento)
 - [Solução de Problemas](#-solução-de-problemas)
 - [Arquitetura do Sistema](#-arquitetura-do-sistema)
-- [Licença](#-licença)
 
 
 ## 🚀 Funcionalidades
