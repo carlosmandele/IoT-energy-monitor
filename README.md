@@ -4,8 +4,10 @@
 
 Sistema de monitoramento de consumo energético em tempo real com integração IoT via nuvem. Desenvolvido para Raspberry Pi Pico W.
 
-## Licenciamento
-#### Copyright (c) 2025, Carlos MANDELE
+## Objetivo:
+
+
+### Copyright (c) 2025, Carlos MANDELE
   
 Este projeto usa **duas licenças diferentes**, dependendo do tipo de conteúdo:  
 
