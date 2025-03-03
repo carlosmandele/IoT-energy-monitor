@@ -203,6 +203,8 @@ void process_line(char *line) {
     if (strcmp(label, "PAPP") == 0) ap = value;
 }
 ```
+- **Funcionamento**: Envia comandos manualmente via USB, simulando um sensor real.
+- **Quando usar**: Para testar o parser de dados ou comunicação serial.
 
 C. **[Modo de simulação automática local (com integração via nuvem)]()**:
 Objetivo: Testar todo fluxo do sistema com dados gerados automáticamente
