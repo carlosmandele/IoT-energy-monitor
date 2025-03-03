@@ -167,9 +167,9 @@ screen /dev/ttyACM0 115200
 
 2. **Testes**:  
 
-i. **Método de teste com Hardware**:  
-   - Monitor serial integrado (`screen`/`minicom`)  
-   - Simulação de dados via Python
+  i. **Método de teste com Hardware**:  
+    - Monitor serial integrado (`screen`/`minicom`)  
+    - Simulação de dados via Python
    ```
    import serial, time
    with serial.Serial('/dev/ttyACM0', 9600) as ser:
@@ -178,7 +178,7 @@ i. **Método de teste com Hardware**:
         time.sleep(5)
    ```
 
-ii. **Métodos de teste sem Hardware**:
+  ii. **Métodos de teste sem Hardware**:
 
 No contexto deste projeto, é validar o funcionamento do programa `sem depender de dispositivos físicos externos` (como medidores de energia ou sensores conectados). É uma forma de simular o ambiente real através de software, útil para: **A) simulação de dados** - o próprio código gera valores fictícios (ex: potência ativa aleatória). Útil para testar a lógica do programa, gráficos, ou interfaces. **B) Entrada Manual via Terminal** - Você digita comandos no terminal serial (ex: `PAPP:1500`) como se fossem dados reais. Permite verificar o processamento de dados sem hardware externo.**C) Emulação de Hardware** - Ferramentas como QEMU ou Wokwi emulam microcontroladores (mais complexo para o Pico).
 
