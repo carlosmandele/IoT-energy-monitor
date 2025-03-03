@@ -166,8 +166,7 @@ screen /dev/ttyACM0 115200
    - VSCode com extensões para C/C++
 
 2. **Testes**:  
-
-  i. **Método de teste com Hardware**:  
+ i. **Método de teste com Hardware**:  
     - Monitor serial integrado (`screen`/`minicom`)  
     - Simulação de dados via Python
    ```
@@ -178,9 +177,9 @@ screen /dev/ttyACM0 115200
         time.sleep(5)
    ```
 
-  ii. **Métodos de teste sem Hardware**:
-
-No contexto deste projeto, é validar o funcionamento do programa `sem depender de dispositivos físicos externos` (como medidores de energia ou sensores conectados). É uma forma de simular o ambiente real através de software, útil para: **A) simulação de dados** - o próprio código gera valores fictícios (ex: potência ativa aleatória). Útil para testar a lógica do programa, gráficos, ou interfaces. **B) Entrada Manual via Terminal** - Você digita comandos no terminal serial (ex: `PAPP:1500`) como se fossem dados reais. Permite verificar o processamento de dados sem hardware externo.**C) Emulação de Hardware** - Ferramentas como QEMU ou Wokwi emulam microcontroladores (mais complexo para o Pico).
+ ii. **Métodos de teste sem Hardware**:
+ 
+   No contexto deste projeto, é validar o funcionamento do programa `sem depender de dispositivos físicos externos` (como medidores de energia ou sensores conectados). É uma forma de simular o ambiente real através de software, útil para: **A) simulação de dados** - o próprio código gera valores fictícios (ex: potência ativa aleatória). Útil para testar a lógica do programa, gráficos, ou interfaces. **B) Entrada Manual via Terminal** - Você digita comandos no terminal serial (ex: `PAPP:1500`) como se fossem dados reais. Permite verificar o processamento de dados sem hardware externo.**C) Emulação de Hardware** - Ferramentas como QEMU ou Wokwi emulam microcontroladores (mais complexo para o Pico).
 
 Neste projeto, há três abordagens para testes sem hardware:
 
