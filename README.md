@@ -277,11 +277,24 @@ with serial.Serial(port, 9600, timeout=1) as ser:
             break
 ```
 
-* Uso:
+  - Uso:
 ```
 python3 manual_input.py /dev/ttyACM0
 ```
 
+  - Fluxo de teste sem hardware
+```mermaid
+  sequenceDiagram
+    participant Simulador
+    participant Pico W
+    participant ThingSpeak
+
+    Simulador->>Pico W: Envia "PAPP:1500\r\n"
+    Pico W->>Pico W: Processa dados
+    Pico W->>ThingSpeak: POST field1=1500
+    ThingSpeak-->>Pico W: Confirmação HTTP 200
+    Pico W->>Simulador: Exibe logs via USB
+```
 
 
 
