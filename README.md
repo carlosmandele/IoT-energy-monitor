@@ -276,7 +276,8 @@ with serial.Serial(port, 9600, timeout=1) as ser:
         except KeyboardInterrupt:
             break
 ```
-    - Uso:
+
+- Uso:
 ```
     python3 manual_input.py /dev/ttyACM0
 ```
