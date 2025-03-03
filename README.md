@@ -182,9 +182,9 @@ ii. **Métodos de teste sem Hardware**:
 
 No contexto deste projeto, é validar o funcionamento do programa `sem depender de dispositivos físicos externos` (como medidores de energia ou sensores conectados). É uma forma de simular o ambiente real através de software, útil para: **A) simulação de dados** - o próprio código gera valores fictícios (ex: potência ativa aleatória). Útil para testar a lógica do programa, gráficos, ou interfaces. **B) Entrada Manual via Terminal** - Você digita comandos no terminal serial (ex: `PAPP:1500`) como se fossem dados reais. Permite verificar o processamento de dados sem hardware externo.**C) Emulação de Hardware** - Ferramentas como QEMU ou Wokwi emulam microcontroladores (mais complexo para o Pico).
 
-Neste projeto, há duas abordagens para testes sem hardware:
+Neste projeto, há três abordagens para testes sem hardware:
 
-A. **[Modo de Simulação Automática](energ_ioT/automatic_simulation.c)**:
+A. **[Modo de simulação automática local (sem integração via nuvem)](energ_ioT/automatic_simulation.c)**:
 ```
 void simular_dados() {
     ap = 1500 + (rand() % 1000);  // Gera valores entre 1500 e 2500 W
@@ -195,7 +195,7 @@ void simular_dados() {
 - **Funcionamento**: O programa gera dados fictícios automaticamente se nenhum hardware estiver conectado.
 - **Quando usar**: Para validar a exibição de dados ou interfaces.
 
-B. **[Teste via Terminal Serial](energ_ioT/terminal_simulation.c)**:
+B. **[Teste via terminal serial (sem integração via nuvem)](energ_ioT/terminal_simulation.c)**:
 ```
 // Você digita "PAPP:2000" no terminal
 void process_line(char *line) {
@@ -203,6 +203,28 @@ void process_line(char *line) {
     if (strcmp(label, "PAPP") == 0) ap = value;
 }
 ```
+
+C. **[Modo de simulação automática local (com integração via nuvem)]()**:
+Objetivo: Testar todo fluxo do sistema com dados gerados automáticamente
+```
+// Altere a UART para usar a interface USB (UART0)
+#define UART_ID uart0
+#define UART_RX_PIN 1  // GPIO1 (UART0 RX)
+```
+
+   1. Scripts Python para gerar dados (`sensor_simulation.py`):
+```
+   import serial, time, random
+
+with serial.Serial('/dev/ttyACM0', 9600) as ser:  # Porta do Pico via USB
+    while True:
+        # Gera dados aleatórios
+        ser.write(f"PAPP:{random.randint(1000, 2500)}\r\n".encode())
+        ser.write(f"HCHC:{random.randint(5000, 15000)}\r\n".encode())
+        ser.write(f"HPHC:{random.randint(2000, 10000)}\r\n".encode())
+        time.sleep(10)  # Intervalo de 10s
+```
+
 
 - **Funcionamento**: Envia comandos manualmente via USB, simulando um sensor real.
 - **Quando usar**: Para testar o parser de dados ou comunicação serial.
