@@ -246,6 +246,26 @@ python3 sensor_simulator.py
 D.[Modo simulação manual via Terminal (com integração a nuvem)]():
 
 Objetivo: Teste interativo com controle total dos dados de entrada
+   1. Método 1 - Terminal Serial Direto:
+      * Conecte o Pico via USB
+      * Use um terminal serial:
+```
+      # Linux
+screen /dev/ttyACM0 115200
+
+# Windows: Use Putty ou PlatformIO Terminal
+```
+
+   * Digite manualmente no terminal:
+```
+      PAPP:1500
+      HCHC:8000
+      HPHC:4500
+```
+
+
+
+
 
 
 
