@@ -244,6 +244,7 @@ python3 sensor_simulator.py
 [NET] Dados enviados para ThingSpeak!
 ```
 D.[Modo simulação manual via Terminal (com integração a nuvem)]():
+
 Objetivo: Teste interativo com controle total dos dados de entrada
 
 
