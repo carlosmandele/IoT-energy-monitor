@@ -208,14 +208,14 @@ void process_line(char *line) {
 
 C. **[Modo de simulação automática local (com integração via nuvem)]()**:
 
-Objetivo: Testar todo fluxo do sistema com dados gerados automáticamente
+**Objetivo**: Testar todo fluxo do sistema com dados gerados automáticamente
 ```
 // Altere a UART para usar a interface USB (UART0)
 #define UART_ID uart0
 #define UART_RX_PIN 1  // GPIO1 (UART0 RX)
 ```
 
-   1. Scripts Python para gerar dados (`sensor_simulation.py`):
+   * Scripts Python para gerar dados (`sensor_simulation.py`):
 ```
    import serial, time, random
 
@@ -229,8 +229,6 @@ with serial.Serial('/dev/ttyACM0', 9600) as ser:  # Porta do Pico via USB
 ```
 
 
-- **Funcionamento**: Envia comandos manualmente via USB, simulando um sensor real.
-- **Quando usar**: Para testar o parser de dados ou comunicação serial.
 
 
 
