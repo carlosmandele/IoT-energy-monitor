@@ -262,6 +262,24 @@ HCHC:8000
 HPHC:4500
 ```
 
+   2. Método 2 - Script de Injeção Interativa (`manual_input.py`):
+```
+   import serial, sys
+
+port = sys.argv[1]  # Ex: /dev/ttyACM0 ou COM3
+with serial.Serial(port, 9600, timeout=1) as ser:
+    while True:
+        try:
+            cmd = input("Comando (PAPP/HCHC/HPHC): ")
+            value = input("Valor: ")
+            ser.write(f"{cmd}:{value}\r\n".encode())
+        except KeyboardInterrupt:
+            break
+```
+    - Uso:
+```
+    python3 manual_input.py /dev/ttyACM0
+```
 
 
 
