@@ -277,9 +277,9 @@ with serial.Serial(port, 9600, timeout=1) as ser:
             break
 ```
 
-- Uso:
+* Uso:
 ```
-    python3 manual_input.py /dev/ttyACM0
+python3 manual_input.py /dev/ttyACM0
 ```
 
 
