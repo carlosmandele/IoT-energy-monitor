@@ -207,6 +207,7 @@ void process_line(char *line) {
 - **Quando usar**: Para testar o parser de dados ou comunicação serial.
 
 C. **[Modo de simulação automática local (com integração via nuvem)]()**:
+
 Objetivo: Testar todo fluxo do sistema com dados gerados automáticamente
 ```
 // Altere a UART para usar a interface USB (UART0)
