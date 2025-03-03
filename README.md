@@ -255,13 +255,11 @@ screen /dev/ttyACM0 115200
 
 # Windows: Use Putty ou PlatformIO Terminal
 ```
-
-        * Digite manualmente no terminal:
-
-```
-      PAPP:1500
-      HCHC:8000
-      HPHC:4500
+  * Digite manualmente no terminal:
+  ```
+PAPP:1500
+HCHC:8000
+HPHC:4500
 ```
 
 
