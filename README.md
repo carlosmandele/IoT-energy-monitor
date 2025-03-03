@@ -215,7 +215,7 @@ C. **[Modo de simulação automática local (com integração via nuvem)]()**:
 #define UART_RX_PIN 1  // GPIO1 (UART0 RX)
 ```
 
-   * Scripts Python para gerar dados (`sensor_simulation.py`):
+   - Scripts Python para gerar dados (`sensor_simulation.py`):
 ```
    import serial, time, random
 
@@ -227,8 +227,22 @@ with serial.Serial('/dev/ttyACM0', 9600) as ser:  # Porta do Pico via USB
         ser.write(f"HPHC:{random.randint(2000, 10000)}\r\n".encode())
         time.sleep(10)  # Intervalo de 10s
 ```
+   - Execução:
+```
+   # Instale dependências
+pip install pyserial
 
+# Execute o simulador
+python3 sensor_simulator.py
+```
 
+   - Saída esperada:
+```
+[UART] Dado recebido: PAPP:1830
+[UART] Dado recebido: HCHC:11200
+[UART] Dado recebido: HPHC:7450
+[NET] Dados enviados para ThingSpeak!
+```
 
 
 
