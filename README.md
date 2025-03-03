@@ -296,8 +296,15 @@ python3 manual_input.py /dev/ttyACM0
     Pico W->>Simulador: Exibe logs via USB
 ```
 
+   - Validação do funcionamento
+      1. **No Terminal Serial**:
+         * Verifique as mensagens de recebimento de dados
+         * Confirme os envios para a nuvem
 
-
+      2. **No ThingSpeak**:
+         * Acesse o canal e verifique:
+         * Atualizações periódicas dos campos
+         * Gráficos gerados automaticamente
 
 
 3. **Deploy**:  
