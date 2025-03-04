@@ -214,7 +214,7 @@ C. **[Modo de simulação automática (com integração via nuvem)]()**:
 #define UART_RX_PIN 1  // GPIO1 (UART0 RX)
 ```
 
-   - Scripts Python para gerar dados (`sensor_simulation.py`):
+   - Scripts Python para gerar dados (`sensor_simulator.py`):
 ```
    import serial, time, random
 
