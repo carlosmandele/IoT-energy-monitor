@@ -237,7 +237,7 @@ if __name__ == "__main__":
 
    - Execução:
 ```
-   # Instale dependências
+# Instale dependências
 pip install pyserial
 
 # Execute o simulador
