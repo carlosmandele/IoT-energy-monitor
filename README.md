@@ -214,18 +214,27 @@ C. **[Modo de simulação automática (com integração via nuvem)]()**:
 #define UART_RX_PIN 1  // GPIO1 (UART0 RX)
 ```
 
-   - Scripts Python para gerar dados (`sensor_simulator.py`):
+   - Scripts Python para gerar dados (`auto_simulator.py`):
 ```
-   import serial, time, random
+# Simulação automática com dados randômicos
+import serial, time, random
 
-with serial.Serial('/dev/ttyACM0', 9600) as ser:  # Porta do Pico via USB
-    while True:
-        # Gera dados aleatórios
-        ser.write(f"PAPP:{random.randint(1000, 2500)}\r\n".encode())
-        ser.write(f"HCHC:{random.randint(5000, 15000)}\r\n".encode())
-        ser.write(f"HPHC:{random.randint(2000, 10000)}\r\n".encode())
-        time.sleep(10)  # Intervalo de 10s
+def main():
+    with serial.Serial('/dev/ttyACM0', 9600) as ser:
+        while True:
+            # Gera dados aleatórios
+            data = f"PAPP:{random.randint(800, 2500)}\r\n"
+            data += f"HCHC:{random.randint(5000, 15000)}\r\n"
+            data += f"HPHC:{random.randint(2000, 10000)}\r\n"
+            
+            ser.write(data.encode())
+            print(f"📤 Enviado: {data.strip().replace('\r\n', ' | ')}")
+            time.sleep(15)  # Intervalo de 11s
+
+if __name__ == "__main__":
+    main() 
 ```
+
    - Execução:
 ```
    # Instale dependências
@@ -261,19 +270,31 @@ HCHC:8000
 HPHC:4500
 ```
 
-   2. Método 2 - Script de Injeção Interativa (`manual_input.py`):
+   2. Método 2 - Script de Injeção Interativa (`cli_injector.py`):
 ```
-   import serial, sys
+# Interface interativa para entrada manual
+import serial, sys, readline
 
-port = sys.argv[1]  # Ex: /dev/ttyACM0 ou COM3
-with serial.Serial(port, 9600, timeout=1) as ser:
-    while True:
-        try:
-            cmd = input("Comando (PAPP/HCHC/HPHC): ")
-            value = input("Valor: ")
-            ser.write(f"{cmd}:{value}\r\n".encode())
-        except KeyboardInterrupt:
-            break
+class SimulatorCLI:
+    def __init__(self, port):
+        self.ser = serial.Serial(port, 9600)
+        
+    def start(self):
+        print("💻 Modo de simulação manual (CTRL+C para sair)")
+        while True:
+            try:
+                cmd = input("▶️ Comando (PAPP/HCHC/HPHC): ").strip().upper()
+                val = input("🔢 Valor: ")
+                self.ser.write(f"{cmd}:{val}\r\n".encode())
+            except KeyboardInterrupt:
+                print("\n🚫 Conexão encerrada")
+                break
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Uso: python cli_injector.py [PORT]")
+        sys.exit(1)
+    SimulatorCLI(sys.argv[1]).start()
 ```
 
   - Uso:
