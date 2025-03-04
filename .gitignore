@@ -254,4 +254,12 @@ poetry.toml
 .ruff_cache/
 
 # LSP config files
-pyrightconfig.json
+pyrightconfig.
+
+# Sensitive data
+/host-tools/.env
+*.local
+
+# Simulation files
+fake_dataset.csv
+simulation.log
