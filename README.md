@@ -337,7 +337,7 @@ python3 manual_input.py /dev/ttyACM0
 
 - Problemas comuns
 
-| Sitomas               | Causa | Solução                              |
+| Sintomas               | Causa | Solução                              |
 |--------------------------|---------------|-----------------------------------|
 | Wi-Fi não conecta                 | SSID/Senha incorretos         | Verifique espaços/caracteres |
 | Dados não atualizam	        | API Key inválida        | Revise permissões do canal |
