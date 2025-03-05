@@ -251,7 +251,7 @@ python3 auto_simulator.py.py
 [UART] Dado recebido: HPHC:7450
 [NET] Dados enviados para ThingSpeak!
 ```
-D.[Modo simulação manual via Terminal (com integração a nuvem)](energ_ioT/energ_ioT.c):
+D.**[Modo simulação manual via Terminal (com integração a nuvem)](energ_ioT/energ_ioT.c)**:
 
 Objetivo: Teste interativo com controle total dos dados de entrada
    1. Método 1 - Terminal Serial Direto:
