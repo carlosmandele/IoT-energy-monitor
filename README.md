@@ -323,8 +323,8 @@ python3 cli_injector.py /dev/ttyACM0
 
       2. **No ThingSpeak**:
           * Acesse o canal e verifique:
-          * Atualizações periódicas dos campos
-          * Gráficos gerados automaticamente
+                * Atualizações periódicas dos campos
+                * Gráficos gerados automaticamente
 
 
 3. **Deploy**:  
