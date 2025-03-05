@@ -241,7 +241,7 @@ if __name__ == "__main__":
 pip install pyserial
 
 # Execute o simulador
-python3 sensor_simulator.py
+python3 auto_simulator.py.py
 ```
 
    - Saída esperada:
