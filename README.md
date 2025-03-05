@@ -299,7 +299,7 @@ if __name__ == "__main__":
 
   - Uso:
 ```
-python3 manual_input.py /dev/ttyACM0
+python3 cli_injector.py /dev/ttyACM0
 ```
 
   - Fluxo de teste sem hardware
