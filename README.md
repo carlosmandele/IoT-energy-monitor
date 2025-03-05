@@ -94,8 +94,8 @@ lwip
 
 ```
 # Clone o repositório
-git clone https://github.com/carlosmandele/energy-monitor-pico.git
-cd energy-monitor-pico
+git clone https://github.com/carlosmandele/IoT-energy-monitor.git
+cd energy-monitor
 
 # Configure as variáveis de ambiente
 export PICO_SDK_PATH=~/pico/pico-sdk
