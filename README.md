@@ -205,7 +205,7 @@ void process_line(char *line) {
 - **Funcionamento**: Envia comandos manualmente via USB, simulando um sensor real.
 - **Quando usar**: Para testar o parser de dados ou comunicação serial.
 
-C. **[Modo de simulação automática (com integração via nuvem)]()**:
+C. **[Modo de simulação automática (com integração via nuvem)](energ_ioT/energ_ioT.c)**:
 
 **Objetivo**: Testar todo fluxo do sistema com dados gerados automáticamente
 ```
@@ -251,7 +251,7 @@ python3 sensor_simulator.py
 [UART] Dado recebido: HPHC:7450
 [NET] Dados enviados para ThingSpeak!
 ```
-D.[Modo simulação manual via Terminal (com integração a nuvem)]():
+D.[Modo simulação manual via Terminal (com integração a nuvem)](energ_ioT/energ_ioT.c):
 
 Objetivo: Teste interativo com controle total dos dados de entrada
    1. Método 1 - Terminal Serial Direto:
